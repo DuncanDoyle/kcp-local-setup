@@ -7,7 +7,7 @@
 ``` ./createKindClusters.sh```
 
 # kcp
-git clone kcp git@github.com:kcp-dev/kcp.git
+```git clone kcp git@github.com:kcp-dev/kcp.git```
 
 # build all binary
 ``` make build-all```
@@ -23,7 +23,7 @@ Create workspace us-west
 ```kubectl kcp ws create wk-us-west ```
 
 # Select workspace us-east
- kubectl kcp ws wk-us-east
+ ```kubectl kcp ws wk-us-east```
 
  # 
  ```kubectl kcp ws current```
@@ -37,18 +37,16 @@ kubectl kcp workload sync us-east \
 ```
 
 ```export KUBECONFIG=kcp-setup/clusters/kind/us-east1.kubeconfig```
-``` kubectl create -f kcp/bin/sync-us-east.yaml ```
+``` kubectl apply -f kcp/bin/sync-us-east.yaml ```
 
 # kcp terminal check the sync target
 ```kubectl get synctargets.workload.kcp.dev ```
 
 # Switch back to root workspace
 ```kubectl kcp ws root```
-# Select the west workspace
-``` kubectl kcp ws wk-us-west ```
 
 # Select workspace us-west
- kubectl kcp ws wk-us-west
+ ```kubectl kcp ws wk-us-west```
 # register the physical cluster
 ```
 kubectl kcp workload sync us-west \
