@@ -106,10 +106,10 @@ for cluster in "${CLUSTERS[@]}"; do
 
     # Only create if we're not reusing existing clusters, or the cluster doesn't exist
     if [[ -z "${REUSE_KIND_CLUSTERS:-}" || -z "${clusterExists}" ]]; then
-        'KIND_EXPERIMENTAL_PROVIDER=${KIND_EXPERIMENTAL_PROVIDER:-} kind create cluster \
+        KIND_EXPERIMENTAL_PROVIDER=${KIND_EXPERIMENTAL_PROVIDER:-} kind create cluster \
             --config "${CLUSTERS_DIR}/${cluster}.config" \
             --kubeconfig "${CLUSTERS_DIR}/${cluster}.kubeconfig" \
-            "${IMAGE_FLAG[@]:[]}"'
+            "${IMAGE_FLAG[@]:[]}"
     fi
 
     if [[ ! -f "${CLUSTERS_DIR}/${cluster}.yaml" ]]; then
